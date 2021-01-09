@@ -26,19 +26,18 @@ print("waiting 10 seconds for chrome to load")
 time.sleep(1 * 10)
 
 def moveMouse():
-	headerSize = 75
+	headerSize = 50
 	sleepyTime = 1 * random.randint(0,10) # seconds
 	print("Mouse move  - initial position")
-	gui.moveTo(1, 1, 0.45)
+	gui.moveTo(1, 1, random.randint(0, 3))
 	print("waiting for " + str(sleepyTime) + " seconds" )
 	time.sleep(sleepyTime)
 	print("Mouse move - green dot area")
-	gui.moveTo(40, 400 + headerSize, 0.5)
-	gui.moveTo(41, 403 + headerSize, 0.1)
-	gui.moveTo(38, 399 + headerSize, 0.3)
-	gui.moveTo(42, 402 + headerSize, 0.25)
-	print("Mouse move  - initial position")
-	gui.moveTo(1, 1, 1)
+	for x in range(12):
+		gui.moveTo(random.randint(35, 50), random.randint(390, 425) + headerSize, random.randint(0, 2))
+		time.sleep(random.randint(0, 2))
+	print("Mouse move  - random position")
+	gui.moveTo(random.randint(0, 300), random.randint(0, 300), random.randint(0, 3))
 
 print("init mouse move loop")
 while True:
